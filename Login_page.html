@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Login Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    font-family: 'Arial', sans-serif;
+  }
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-form {
+    padding: 2rem;
+    background: #222;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  .login-form h2 {
+    color: #0ff;
+    text-align: center;
+    text-shadow: 0 0 5px cyan;
+  }
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  .input-group label {
+    display: block;
+    color: #0ff;
+    text-shadow: 0 0 5px cyan;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background: none;
+    border: 1px solid cyan;
+    border-radius: 3px;
+    color: #0ff;
+    outline: none;
+  }
+  .input-group input:focus {
+    box-shadow: 0 0 5px cyan;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: cyan;
+    color: #111;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 5px cyan;
+  }
+  .submit-btn:hover {
+    background-color: #0ff;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <form class="login-form">
+    <h2>Login</h2>
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" class="submit-btn">Log In</button>
+  </form>
+</div>
+
+<script>
+  // JavaScript can be used to add interactivity or validate the form
+  document.querySelector('.login-form').onsubmit = function(event) {
+    event.preventDefault();
+    // Perform login logic
+    alert('Login successful!');
+  };
+</script>
+
+</body>
+  </html>
+  
