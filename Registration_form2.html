@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Registration Form</title>
+<style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body and Background Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #c1c1c1;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Form Container */
+  .form-container {
+    width: 700px;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffea;
+  }
+
+  /* Form Title */
+  .form-title {
+    text-align: center;
+    color: #00ffea;
+    margin-bottom: 30px;
+  }
+
+  /* Input Group Styles */
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-size: 16px;
+    color: #00ffea;
+    margin-bottom: 10px;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #00ffea;
+    border-radius: 4px;
+    color: #c1c1c1;
+    font-size: 16px;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: #00ffea;
+    box-shadow: 0 0 8px #00ffea;
+  }
+
+  /* Button Styles */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #00ffea;
+    color: #121212;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 300ms ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #008f8c;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <h1 class="form-title">Business Registration</h1>
+  <form id="businessForm">
+    <!-- Business Name -->
+    <div class="input-group">
+      <label for="businessName">Business Name</label>
+      <input type="text" id="businessName" name="businessName" required>
+    </div>
+    <!-- Owner Name -->
+    <div class="input-group">
+      <label for="ownerName">Owner's Name</label>
+      <input type="text" id="ownerName" name="ownerName" required>
+    </div>
+    <!-- Business Email -->
+    <div class="input-group">
+      <label for="businessEmail">Business Email</label>
+      <input type="email" id="businessEmail" name="businessEmail" required>
+    </div>
+    <!-- Business Phone -->
+    <div class="input-group">
+      <label for="businessPhone">Business Phone</label>
+      <input type="tel" id="businessPhone" name="businessPhone" required>
+    </div>
+    <!-- Business Address -->
+    <div class="input-group">
+      <label for="businessAddress">Business Address</label>
+      <textarea id="businessAddress" name="businessAddress" rows="3" required></textarea>
+    </div>
+    <!-- Business Type -->
+    <div class="input-group">
+      <label for="businessType">Business Type</label>
+      <select id="businessType" name="businessType" required>
+        <option value="">Select Type</option>
+        <option value="sole_proprietorship">Sole Proprietorship</option>
+        <option value="partnership">Partnership</option>
+        <option value="corporation">Corporation</option>
+        <option value="llc">LLC</option>
+      </select>
+    </div>
+    <!-- Business Category -->
+    <div class="input-group">
+      <label for="businessCategory">Business Category</label>
+      <select id="businessCategory" name="businessCategory" required>
+        <option value="">Select Category</option>
+        <option value="retail">Retail</option>
+        <option value="food_service">Food Service</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="technology">Technology</option>
+      </select>
+    </div>
+    <!-- Registration Number -->
+    <div class="input-group">
+      <label for="registrationNumber">Registration Number</label>
+      <input type="text" id="registrationNumber" name="registrationNumber" required>
+    </div>
+    <!-- Tax ID -->
+    <div class="input-group">
+      <label for="taxId">Tax ID</label>
+      <input type="text" id="taxId" name="taxId" required>
+    </div>
+    <!-- Additional Information -->
+    <div class="input-group">
+      <label for="additionalInfo">Additional Information</label>
+      <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Register Business</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('businessForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Form validation and submission logic goes here
+    alert('Business registration form submitted successfully!');
+  });
+</script>
+
+</body>
+  </html>
+  
