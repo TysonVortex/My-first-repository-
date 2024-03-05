@@ -25,14 +25,25 @@
     overflow: hidden;
   }
 
-  /* Form Container */
+  /* Form Container
   .form-container {
     width: 700px;
     padding: 40px;
     background-color: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 0 20px #00ffea;
+  }*/
+
+ .form-container {
+    width: 700px;
+    max-height: 80vh; /* Added a max-height to limit the form height */
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffea;
+    overflow-y: auto; /* Added overflow-y to enable vertical scroll bar */
   }
+
 
   /* Form Title */
   .form-title {
