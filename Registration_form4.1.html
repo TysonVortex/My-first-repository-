@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Registration Form</title>
+<style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body and Background Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #070F34, #0313A6, #9201CB);
+    color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Form Container */
+  .form-container {
+    width: 700px;
+    max-height: 90vh;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid #34EDF3;
+    box-shadow: 0 10px 30px rgba(52, 237, 243, 0.5);
+    overflow-y: auto;
+  }
+
+  /* Form Title */
+  .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #F715AB;
+  }
+
+  /* Input Group Styles */
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #34EDF3;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 10px;
+    background-color: #0313A6;
+    border: 1px solid #34EDF3;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: #F715AB;
+    box-shadow: 0 0 8px #F715AB;
+  }
+
+  /* Button Styles */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #34EDF3;
+    color: #070F34;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 300ms ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #9201CB;
+    color: #fff;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Form HTML structure goes here -->
+<div class="form-container">
+  <h1 class="form-title">Vehicle Registration</h1>
+  <form id="vehicleForm">
+    <!-- Owner's Name -->
+    <div class="input-group">
+      <label for="ownerName">Owner's Name</label>
+      <input type="text" id="ownerName" name="ownerName" required>
+    </div>
+    <!-- Contact Number -->
+    <div class="input-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="tel" id="contactNumber" name="contactNumber" required>
+    </div>
+    <!-- Email Address -->
+    <div class="input-group">
+      <label for="emailAddress">Email Address</label>
+      <input type="email" id="emailAddress" name="emailAddress" required>
+    </div>
+    <!-- Vehicle Make -->
+    <div class="input-group">
+      <label for="vehicleMake">Vehicle Make</label>
+      <input type="text" id="vehicleMake" name="vehicleMake" required>
+    </div>
+    <!-- Vehicle Model -->
+    <div class="input-group">
+      <label for="vehicleModel">Vehicle Model</label>
+      <input type="text" id="vehicleModel" name="vehicleModel" required>
+    </div>
+    <!-- Vehicle Year -->
+    <div class="input-group">
+      <label for="vehicleYear">Vehicle Year</label>
+      <input type="number" id="vehicleYear" name="vehicleYear" required>
+    </div>
+    <!-- License Plate Number -->
+    <div class="input-group">
+      <label for="licensePlateNumber">License Plate Number</label>
+      <input type="text" id="licensePlateNumber" name="licensePlateNumber" required>
+    </div>
+    <!-- VIN -->
+    <div class="input-group">
+      <label for="vin">Vehicle Identification Number (VIN)</label>
+      <input type="text" id="vin" name="vin" required>
+    </div>
+    <!-- Insurance Company -->
+    <div class="input-group">
+      <label for="insuranceCompany">Insurance Company</label>
+      <input type="text" id="insuranceCompany" name="insuranceCompany" required>
+    </div>
+    <!-- Policy Number -->
+    <div class="input-group">
+      <label for="policyNumber">Policy Number</label>
+      <input type="text" id="policyNumber" name="policyNumber" required>
+    </div>
+    <!-- Additional Information -->
+    <div class="input-group">
+      <label for="additionalInfo">Additional Information</label>
+      <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Register Vehicle</button>
+  </form>
+</div>
+
+
+<script>
+  // JavaScript validation logic goes here
+  document.getElementById('vehicleForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Basic validation logic here
+    var ownerName = document.getElementById('ownerName').value;
+    // Perform similar checks for other fields
+    if (ownerName === '') {
+      alert('Please fill out the owner\'s name.');
+      return;
+    }
+    // If all validations pass
+    alert('Vehicle registration form submitted successfully!');
+  });
+</script>
+
+</body>
+  </html>
+  
