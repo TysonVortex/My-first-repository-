@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Membership Registration Form</title>
+<style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body and Background Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Form Container */
+  .form-container {
+    width: 500px;
+    max-height: 90vh;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid #6f00ff;
+    box-shadow: 0 10px 30px rgba(111, 0, 255, 0.5);
+    animation: containerGlow 2s ease-in-out infinite alternate;
+    overflow-y: auto;
+  }
+
+  @keyframes containerGlow {
+    from {
+      box-shadow: 0 10px 30px rgba(111, 0, 255, 0.5);
+    }
+    to {
+      box-shadow: 0 10px 40px rgba(255, 0, 255, 0.8);
+    }
+  }
+
+  /* Form Title */
+  .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #6f00ff;
+    text-shadow: 0 0 5px #ff00ff;
+  }
+
+  /* Input Group Styles */
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #6f00ff;
+    text-shadow: 0 0 5px #ff00ff;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 10px;
+    background-color: #1e1e1e;
+    border: 1px solid #6f00ff;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 8px #ff00ff;
+    transform: scale(1.05);
+  }
+
+  /* Button Styles */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #6f00ff;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 300ms ease, transform 0.3s ease;
+    text-shadow: 0 0 5px #ff00ff;
+  }
+
+  .submit-btn:hover {
+    background-color: #ff00ff;
+    transform: scale(1.05);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- The rest of the form HTML structure goes here -->
+<div class="form-container">
+  <h1 class="form-title">Join Our Club</h1>
+  <form id="membershipForm">
+    <!-- Full Name -->
+    <div class="input-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+    <!-- Date of Birth -->
+    <div class="input-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <!-- Email Address -->
+    <div class="input-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <!-- Phone Number -->
+    <div class="input-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <!-- Address -->
+    <div class="input-group">
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+    </div>
+    <!-- Membership Type -->
+    <div class="input-group">
+      <label for="membershipType">Membership Type</label>
+      <select id="membershipType" name="membershipType" required>
+        <option value="">Select Membership Type</option>
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+        <option value="vip">VIP</option>
+      </select>
+    </div>
+    <!-- Payment Method -->
+    <div class="input-group">
+      <label for="paymentMethod">Payment Method</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="">Select Payment Method</option>
+        <option value="credit_card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="bitcoin">Bitcoin</option>
+      </select>
+    </div>
+    <!-- Card Number -->
+    <div class="input-group">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" name="cardNumber">
+    </div>
+    <!-- CVV -->
+    <div class="input-group">
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" name="cvv">
+    </div>
+    <!-- Expiration Date -->
+    <div class="input-group">
+      <label for="expDate">Expiration Date</label>
+      <input type="month" id="expDate" name="expDate">
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+</div>
+
+<script>
+  // JavaScript validation logic goes here
+  document.getElementById('membershipForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Basic validation logic here
+    var fullName = document.getElementById('fullName').value;
+    // Perform similar checks for other fields
+    if (fullName === '') {
+      alert('Please fill out the full name.');
+      return;
+    }
+    // If all validations pass
+    alert('Membership registration form submitted successfully!');
+  });
+</script>
+
+</body>
+ </html>
